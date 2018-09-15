@@ -1,0 +1,39 @@
+<h2> <%=user.fullname %> </h2>
+<html>
+<a href="/logout"> Logout</a>
+<div class="col-lg-6 col-md-6 col-sm-4 col-xs-6">
+                <div class="form-group">
+                    <label>Logged in users</label>
+                    <ul id="loggedinUsers">
+                    </ul>
+                </div>
+            </div>
+</html>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  var socketInstance = io();
+
+  socketInstance.on('user-logged-in', (data) => {
+  	// debugger
+  	var li = document.createElement("li");
+  	var node = document.createTextNode(data.user.fullname);
+  	li.setAttribute("id",data.user._id);
+	li.appendChild(node);
+
+	document.getElementById('loggedinUsers').appendChild(li);
+  })
+  socketInstance.on('user-logged-out', (data) => {
+  	console.log(data,"log out");
+  	// debugger
+ //  	var li = document.createElement("li");
+ //  	var node = document.createTextNode(data.user.fullname);
+	// li.appendChild(node);
+	debugger
+	list = document.getElementById('loggedinUsers')
+	user = document.getElementById(data.user._id)
+	list.removeChild(user);
+  })
+
+
+</script>

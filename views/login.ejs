@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Passport Local Strategy</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+</head>
+<body>
+	<div class="container" style="margin-bottom: 100 px">
+
+	<div class="text-center reg_msg">
+		<h2 style="color:#808080"> <span>Log In</span></h2>
+		</div><br>
+
+		<h3><%=loginError %></h3>
+		<h3><%=passwordError %></h3>
+
+
+		<div class="row signup">
+	<form action="/login" method="post">
+
+		
+		<div class="row form-group input_group">
+			<div class="col-sm-12">
+				<input type="text" name="email" id="email" class="form-control"
+				placeholder="email">
+				</div>
+			</div>
+		<div class="row form-group input_group">
+			<div class="col-sm-12">
+				<input type="password" name="password" id="password" class="form-control"
+				placeholder="password">
+				</div>
+			</div>
+		<div class="row form-group input_group">
+			<div class="col-sm-12">
+				<input type="submit" name="submit" id="sign-up" class="form-control"
+				value="log in">
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+	</div>
